@@ -395,24 +395,24 @@
       <div class="form-row">
         <div class="form-group">
           <label>First Name</label>
-          <input type="text" placeholder="John">
+          <input type="text" name="first_name" placeholder="John">
         </div>
         <div class="form-group">
           <label>Last Name</label>
-          <input type="text" placeholder="Smith">
+          <input type="text" name="last_name" placeholder="Smith">
         </div>
       </div>
       <div class="form-group">
         <label>Phone Number</label>
-        <input type="tel" placeholder="(941) 555-0000">
+        <input type="tel" name="phone" placeholder="(941) 555-0000">
       </div>
       <div class="form-group">
         <label>Service Address</label>
-        <input type="text" placeholder="123 Main St, Sarasota FL">
+        <input type="text" name="address" placeholder="123 Main St, Sarasota FL">
       </div>
       <div class="form-group">
         <label>Service Needed</label>
-        <select>
+        <select name="service">
           <option value="">Select a service...</option>
           <option>AC Repair</option>
           <option>AC Installation / Replacement</option>
@@ -427,11 +427,11 @@
       <div class="form-row">
         <div class="form-group">
           <label>Preferred Date</label>
-          <input type="date">
+          <input type="date" name="preferred_date">
         </div>
         <div class="form-group">
           <label>Preferred Time</label>
-          <select>
+          <select name="preferred_time">
             <option>Morning (8am–12pm)</option>
             <option>Afternoon (12pm–5pm)</option>
             <option>Evening (5pm–8pm)</option>
@@ -440,7 +440,7 @@
       </div>
       <div class="form-group">
         <label>Describe the Issue (optional)</label>
-        <textarea placeholder="e.g. AC is blowing warm air, unit is making a loud noise..."></textarea>
+        <textarea name="message" placeholder="e.g. AC is blowing warm air, unit is making a loud noise..."></textarea>
       </div>
       <button class="form-submit">Submit Request →</button>
       </form>
