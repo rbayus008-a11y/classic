@@ -3,198 +3,189 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Classic HVAC and Heating Experts | Sarasota, FL</title>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<title>Emanuel Landscaping Service LLC | Sarasota, FL</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
-    --ice: #e6f4f9;
-    --navy: #0a1628;
-    --blue: #1a6fa8;
-    --accent: #f4a423;
-    --light: #f8fafc;
-    --text: #1a2332;
-    --muted: #5a6a7a;
-    --border: #dde4ea;
+    --green: #2d6a4f;
+    --green-dark: #1b4332;
+    --green-light: #52b788;
+    --green-pale: #d8f3dc;
+    --lime: #95d5b2;
+    --sand: #fdf6ec;
+    --cream: #fafaf7;
+    --text: #1a2315;
+    --muted: #6b7c6e;
+    --border: #dde8dd;
   }
   html { scroll-behavior: smooth; }
-  body { font-family: 'DM Sans', sans-serif; color: var(--text); background: #fff; line-height: 1.6; }
+  body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--cream); line-height: 1.6; }
+  ::-webkit-scrollbar { width: 5px; }
+  ::-webkit-scrollbar-thumb { background: var(--green-light); border-radius: 3px; }
 
+  /* NAV */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    background: rgba(10,22,40,0.97); backdrop-filter: blur(8px);
+    background: rgba(27,67,50,0.97); backdrop-filter: blur(12px);
     display: flex; align-items: center; justify-content: space-between;
-    padding: 0 5%; height: 64px;
+    padding: 0 5%; height: 68px;
   }
-  .nav-logo { font-family: 'Bebas Neue', sans-serif; font-size: 24px; color: #fff; letter-spacing: 2px; }
-  .nav-logo span { color: var(--accent); }
-  .nav-links { display: flex; gap: 32px; }
-  .nav-links a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.2s; }
-  .nav-links a:hover { color: var(--accent); }
-  .nav-cta {
-    background: var(--accent); color: var(--navy); font-weight: 500; font-size: 14px;
-    padding: 10px 22px; border-radius: 4px; text-decoration: none; transition: opacity 0.2s;
-  }
-  .nav-cta:hover { opacity: 0.88; }
+  .nav-logo { font-family: 'Playfair Display', serif; font-size: 18px; color: #fff; letter-spacing: 0.3px; display: flex; flex-direction: column; line-height: 1.2; }
+  .nav-logo-sub { font-size: 10px; color: var(--lime); letter-spacing: 1.5px; text-transform: uppercase; font-family: 'Inter', sans-serif; font-weight: 500; }
+  .nav-links { display: flex; gap: 28px; }
+  .nav-links a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 13px; font-weight: 500; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--lime); }
+  .nav-cta { background: var(--green-light); color: var(--green-dark); font-size: 13px; font-weight: 600; padding: 10px 22px; border-radius: 50px; text-decoration: none; transition: all 0.2s; }
+  .nav-cta:hover { background: #fff; transform: translateY(-1px); }
 
+  /* HERO */
   .hero {
-    min-height: 100vh; background: var(--navy);
-    display: flex; align-items: center;
-    padding: 80px 5% 60px;
-    position: relative; overflow: hidden;
+    min-height: 100vh; position: relative; overflow: hidden;
+    background: linear-gradient(145deg, #1b4332 0%, #2d6a4f 50%, #40916c 100%);
+    display: flex; align-items: center; padding: 90px 5% 80px;
   }
-  .hero::before {
-    content: '';
-    position: absolute; top: -100px; right: -100px;
-    width: 600px; height: 600px;
-    background: radial-gradient(circle, rgba(26,111,168,0.25) 0%, transparent 70%);
-    pointer-events: none;
-  }
-  .hero-content { max-width: 640px; position: relative; z-index: 1; }
-  .hero-badges { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 28px; }
-  .hero-badge {
-    display: inline-flex; align-items: center; gap: 8px;
-    background: rgba(26,111,168,0.2); border: 1px solid rgba(26,111,168,0.4);
-    color: #7ec8f0; font-size: 12px; font-weight: 500; padding: 5px 12px;
-    border-radius: 20px; letter-spacing: 0.3px;
-  }
-  .hero-badge.live::before { content: '●'; font-size: 7px; color: #4ecf7a; animation: pulse 2s infinite; }
-  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
-  .badge-gold { background: rgba(244,164,35,0.15); border-color: rgba(244,164,35,0.4); color: var(--accent); }
-  h1 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(48px, 8vw, 86px);
-    line-height: 0.95; color: #fff; letter-spacing: 1px; margin-bottom: 24px;
-  }
-  h1 span { color: var(--accent); display: block; }
-  .hero-sub { font-size: 17px; color: rgba(255,255,255,0.65); font-weight: 300; max-width: 500px; margin-bottom: 40px; line-height: 1.75; }
-  .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
-  .btn-primary {
-    background: var(--accent); color: var(--navy); font-weight: 500;
-    padding: 15px 32px; border-radius: 4px; text-decoration: none; font-size: 15px;
-    display: inline-flex; align-items: center; gap: 8px; transition: all 0.2s;
-  }
-  .btn-primary:hover { opacity: 0.9; transform: translateY(-1px); }
-  .btn-outline {
-    background: transparent; color: #fff; font-weight: 500;
-    padding: 15px 32px; border-radius: 4px; text-decoration: none; font-size: 15px;
-    border: 1.5px solid rgba(255,255,255,0.3); display: inline-flex; align-items: center; gap: 8px;
-    transition: all 0.2s;
-  }
-  .btn-outline:hover { border-color: rgba(255,255,255,0.7); }
-  .hero-stats {
-    display: flex; gap: 40px; margin-top: 52px;
-    padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.1);
-  }
-  .stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 34px; color: #fff; letter-spacing: 1px; }
-  .stat-num span { color: var(--accent); }
-  .stat-label { font-size: 11px; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 1px; }
+  .hero-pattern { position: absolute; inset: 0; opacity: 0.04; background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 36px 36px; }
+  .hero-glow { position: absolute; top: -100px; right: -100px; width: 600px; height: 600px; background: radial-gradient(circle, rgba(149,213,178,0.15) 0%, transparent 65%); pointer-events: none; }
+  .hero-glow2 { position: absolute; bottom: -150px; left: -50px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(82,183,136,0.1) 0%, transparent 65%); pointer-events: none; }
+  .hero-wave { position: absolute; bottom: -2px; left: 0; right: 0; }
+  .hero-wave svg { display: block; width: 100%; }
+  .hero-inner { position: relative; z-index: 2; display: grid; grid-template-columns: 1fr 300px; gap: 60px; align-items: center; width: 100%; }
+  .hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; background: rgba(149,213,178,0.15); border: 1px solid rgba(149,213,178,0.3); color: var(--lime); font-size: 11px; font-weight: 600; padding: 5px 14px; border-radius: 50px; margin-bottom: 22px; letter-spacing: 1px; text-transform: uppercase; }
+  .hero-eyebrow-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--lime); animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.4;transform:scale(0.8)} }
+  h1 { font-family: 'Playfair Display', serif; font-size: clamp(46px, 7vw, 82px); font-weight: 800; color: #fff; line-height: 1.0; letter-spacing: -1px; margin-bottom: 22px; }
+  h1 em { color: var(--lime); font-style: italic; }
+  .hero-sub { font-size: 15px; color: rgba(255,255,255,0.65); max-width: 480px; line-height: 1.85; margin-bottom: 36px; font-weight: 300; }
+  .hero-pills { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 36px; }
+  .hero-pill { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.85); font-size: 11px; font-weight: 600; padding: 5px 14px; border-radius: 50px; letter-spacing: 0.5px; }
+  .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn-lime { background: var(--green-light); color: var(--green-dark); font-size: 13px; font-weight: 600; padding: 14px 32px; border-radius: 50px; text-decoration: none; transition: all 0.2s; display: inline-flex; align-items: center; gap: 8px; }
+  .btn-lime:hover { background: #fff; transform: translateY(-2px); }
+  .btn-ghost { background: transparent; color: #fff; font-size: 13px; font-weight: 500; padding: 14px 28px; border-radius: 50px; text-decoration: none; border: 1.5px solid rgba(255,255,255,0.35); transition: all 0.2s; display: inline-flex; align-items: center; gap: 8px; }
+  .btn-ghost:hover { border-color: #fff; }
 
-  .trust-bar {
-    background: var(--accent); padding: 16px 5%;
-    display: flex; align-items: center; justify-content: center; gap: 36px; flex-wrap: wrap;
-  }
-  .trust-item { display: flex; align-items: center; gap: 8px; color: var(--navy); font-size: 13px; font-weight: 500; }
+  /* HERO CARD */
+  .hero-card { background: rgba(255,255,255,0.08); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.15); border-radius: 20px; padding: 32px 28px; display: flex; flex-direction: column; gap: 20px; }
+  .hero-card-label { font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--lime); margin-bottom: 4px; font-weight: 600; }
+  .hero-stat { padding-bottom: 18px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .hero-stat:last-child { border: none; padding: 0; }
+  .hero-stat-num { font-family: 'Playfair Display', serif; font-size: 38px; font-weight: 700; color: #fff; line-height: 1; }
+  .hero-stat-num sup { font-size: 18px; color: var(--lime); }
+  .hero-stat-label { font-size: 11px; color: rgba(255,255,255,0.45); letter-spacing: 1px; text-transform: uppercase; margin-top: 4px; }
 
-  section { padding: 90px 5%; }
-  .section-label { font-size: 12px; text-transform: uppercase; letter-spacing: 2px; color: var(--blue); font-weight: 500; margin-bottom: 12px; }
-  .section-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(34px, 5vw, 52px); color: var(--navy); letter-spacing: 1px; line-height: 1; margin-bottom: 16px; }
-  .section-sub { color: var(--muted); font-size: 16px; max-width: 520px; line-height: 1.7; margin-bottom: 48px; }
+  /* TICKER */
+  .ticker { background: var(--green-light); padding: 12px 0; overflow: hidden; }
+  .ticker-track { display: flex; animation: scroll 22s linear infinite; white-space: nowrap; }
+  @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .ticker-item { font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--green-dark); padding: 0 26px; display: flex; align-items: center; gap: 12px; }
+  .tdot { width: 3px; height: 3px; border-radius: 50%; background: var(--green-dark); opacity: 0.4; }
 
-  .services-section { background: var(--light); }
-  .services-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
-  .service-card {
-    background: #fff; border: 1px solid var(--border); border-radius: 8px;
-    padding: 28px; transition: all 0.2s;
-  }
-  .service-card:hover { border-color: var(--blue); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(26,111,168,0.1); }
-  .service-icon { width: 48px; height: 48px; background: var(--ice); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 16px; }
-  .service-name { font-weight: 500; font-size: 16px; color: var(--navy); margin-bottom: 6px; }
-  .service-tag { font-size: 12px; color: var(--blue); font-weight: 500; margin-bottom: 10px; }
-  .service-desc { font-size: 14px; color: var(--muted); line-height: 1.65; margin-bottom: 16px; }
-  .service-price { font-family: 'Bebas Neue', sans-serif; font-size: 22px; color: var(--navy); letter-spacing: 0.5px; }
-  .service-price span { font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 400; color: var(--muted); }
+  /* SECTIONS */
+  section { padding: 96px 5%; }
+  .stag { display: inline-flex; align-items: center; gap: 6px; background: var(--green-pale); border: 1px solid rgba(82,183,136,0.3); color: var(--green); font-size: 11px; font-weight: 600; padding: 5px 14px; border-radius: 50px; margin-bottom: 16px; letter-spacing: 1px; text-transform: uppercase; }
+  .stitle { font-family: 'Playfair Display', serif; font-size: clamp(30px, 4vw, 48px); font-weight: 800; color: var(--text); line-height: 1.1; margin-bottom: 14px; letter-spacing: -0.5px; }
+  .stitle em { color: var(--green); font-style: italic; }
+  .ssub { color: var(--muted); font-size: 15px; max-width: 520px; line-height: 1.85; margin-bottom: 52px; font-weight: 300; }
 
-  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
-  .about-box { background: var(--navy); border-radius: 12px; padding: 44px 40px; display: flex; flex-direction: column; gap: 20px; }
-  .about-box-title { font-family: 'Bebas Neue', sans-serif; font-size: 20px; color: #fff; letter-spacing: 1px; margin-bottom: 4px; }
-  .about-quote { font-size: 15px; color: rgba(255,255,255,0.65); line-height: 1.8; font-style: italic; border-left: 3px solid var(--accent); padding-left: 16px; }
-  .about-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
-  .about-tag { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.7); font-size: 12px; padding: 5px 12px; border-radius: 20px; }
-  .about-tag.gold { background: rgba(244,164,35,0.15); color: var(--accent); border: 1px solid rgba(244,164,35,0.3); }
-  .reasons { display: flex; flex-direction: column; gap: 22px; }
-  .reason { display: flex; gap: 16px; align-items: flex-start; }
-  .reason-num { font-family: 'Bebas Neue', sans-serif; font-size: 28px; color: var(--accent); line-height: 1; min-width: 32px; }
-  .reason-title { font-weight: 500; font-size: 15px; color: var(--navy); margin-bottom: 4px; }
-  .reason-text { font-size: 14px; color: var(--muted); line-height: 1.6; }
+  /* ABOUT */
+  .about-bg { background: #fff; }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+  .about-visual { background: linear-gradient(145deg, var(--green-dark), var(--green)); border-radius: 20px; padding: 44px 40px; position: relative; overflow: hidden; }
+  .about-visual::before { content: '🌿'; position: absolute; bottom: -20px; right: -10px; font-size: 140px; opacity: 0.1; }
+  .about-visual-title { font-family: 'Playfair Display', serif; font-size: 14px; color: var(--lime); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 24px; }
+  .astat { display: flex; align-items: center; gap: 16px; padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .astat:last-child { border: none; }
+  .astat-num { font-family: 'Playfair Display', serif; font-size: 30px; font-weight: 700; color: var(--lime); min-width: 70px; line-height: 1; }
+  .astat-label { font-size: 13px; color: rgba(255,255,255,0.6); font-weight: 300; }
+  .hurricane-badge { margin-top: 20px; padding: 16px; background: rgba(149,213,178,0.12); border: 1px solid rgba(149,213,178,0.25); border-radius: 12px; }
+  .hurricane-badge-title { font-size: 12px; font-weight: 600; color: var(--lime); letter-spacing: 0.5px; margin-bottom: 6px; }
+  .hurricane-badge-text { font-size: 13px; color: rgba(255,255,255,0.55); line-height: 1.65; font-weight: 300; }
+  .reasons { display: flex; flex-direction: column; gap: 20px; }
+  .reason { display: flex; gap: 14px; align-items: flex-start; }
+  .reason-icon { width: 40px; height: 40px; background: var(--green-pale); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+  .reason-title { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 3px; }
+  .reason-text { font-size: 13px; color: var(--muted); line-height: 1.65; font-weight: 300; }
 
-  .review-section { background: var(--light); }
-  .review-overall { display: flex; align-items: center; gap: 16px; margin-bottom: 32px; }
-  .review-score { font-family: 'Bebas Neue', sans-serif; font-size: 64px; color: var(--navy); letter-spacing: 1px; line-height: 1; }
-  .review-score-stars { font-size: 22px; color: var(--accent); letter-spacing: 2px; }
-  .review-score-label { font-size: 13px; color: var(--muted); }
-  .review-card { background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 28px; max-width: 540px; }
-  .review-stars { color: var(--accent); font-size: 18px; margin-bottom: 12px; letter-spacing: 2px; }
-  .review-text { font-size: 15px; color: var(--text); line-height: 1.7; margin-bottom: 16px; font-style: italic; }
-  .review-author { font-weight: 500; font-size: 14px; color: var(--navy); }
-  .review-date { font-size: 13px; color: var(--muted); }
+  /* SERVICES */
+  .services-bg { background: var(--sand); }
+  .services-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; }
+  .svc { background: #fff; border-radius: 16px; padding: 28px; border: 1.5px solid var(--border); transition: all 0.25s; position: relative; overflow: hidden; }
+  .svc::after { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--green), var(--green-light)); transform: scaleX(0); transform-origin: left; transition: transform 0.3s; }
+  .svc:hover { border-color: var(--green-light); transform: translateY(-3px); box-shadow: 0 12px 32px rgba(45,106,79,0.1); }
+  .svc:hover::after { transform: scaleX(1); }
+  .svc-icon { font-size: 30px; margin-bottom: 14px; }
+  .svc-name { font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+  .svc-desc { font-size: 13px; color: var(--muted); line-height: 1.7; font-weight: 300; }
 
-  .booking-section { background: var(--navy); }
-  .booking-section .section-title { color: #fff; }
-  .booking-section .section-sub { color: rgba(255,255,255,0.55); }
-  .booking-section .section-label { color: var(--accent); }
-  .booking-layout { display: grid; grid-template-columns: 1fr 1.1fr; gap: 60px; align-items: start; }
-  .form-card { background: #fff; border-radius: 10px; padding: 36px; }
-  .form-title { font-weight: 500; font-size: 17px; color: var(--navy); margin-bottom: 22px; }
-  .form-group { margin-bottom: 18px; }
-  .form-group label { display: block; font-size: 13px; font-weight: 500; color: var(--text); margin-bottom: 6px; }
-  .form-group input, .form-group select, .form-group textarea {
-    width: 100%; padding: 11px 14px; border: 1.5px solid var(--border);
-    border-radius: 6px; font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--text);
-    background: #fff; transition: border-color 0.2s; outline: none;
-  }
-  .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--blue); }
+  /* REVIEW */
+  .review-bg { background: var(--green-dark); position: relative; overflow: hidden; }
+  .review-bg::before { content: ''; position: absolute; inset: 0; background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.04) 1px, transparent 0); background-size: 28px 28px; }
+  .review-bg .stag { background: rgba(149,213,178,0.1); border-color: rgba(149,213,178,0.2); color: var(--lime); }
+  .review-bg .stitle { color: #fff; }
+  .review-bg .stitle em { color: var(--lime); }
+  .review-bg .ssub { color: rgba(255,255,255,0.5); }
+  .review-layout { display: grid; grid-template-columns: 220px 1fr; gap: 64px; align-items: start; position: relative; z-index: 1; }
+  .score-box { border: 1px solid rgba(149,213,178,0.2); padding: 36px 28px; text-align: center; border-radius: 16px; background: rgba(255,255,255,0.04); }
+  .score-num { font-family: 'Playfair Display', serif; font-size: 68px; font-weight: 800; color: #fff; line-height: 1; }
+  .score-stars { color: #ffd60a; font-size: 20px; letter-spacing: 3px; margin: 8px 0; }
+  .score-label { font-size: 11px; color: rgba(255,255,255,0.4); letter-spacing: 1px; text-transform: uppercase; }
+  .review-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 36px; position: relative; }
+  .review-card::before { content: '"'; font-family: 'Playfair Display', serif; font-size: 80px; color: var(--lime); opacity: 0.2; position: absolute; top: 8px; left: 24px; line-height: 1; }
+  .review-quote { font-family: 'Playfair Display', serif; font-size: 19px; font-style: italic; color: rgba(255,255,255,0.9); line-height: 1.7; margin-bottom: 24px; padding-left: 8px; }
+  .review-author { display: flex; align-items: center; gap: 12px; }
+  .review-avatar { width: 36px; height: 36px; background: var(--green-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; color: var(--green-dark); }
+  .review-name { font-size: 14px; font-weight: 600; color: #fff; }
+  .review-meta { font-size: 12px; color: rgba(255,255,255,0.4); margin-top: 1px; }
+  .hurricane-tag { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,214,10,0.1); border: 1px solid rgba(255,214,10,0.25); color: #ffd60a; font-size: 11px; font-weight: 600; padding: 4px 12px; border-radius: 50px; margin-top: 10px; }
+
+  /* BOOKING */
+  .booking-bg { background: #fff; }
+  .booking-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 72px; align-items: start; }
+  .form-wrap { background: var(--green-dark); border-radius: 20px; padding: 44px 40px; }
+  .form-title { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+  .form-sub { font-size: 13px; color: rgba(255,255,255,0.5); margin-bottom: 28px; font-weight: 300; }
+  .form-group { margin-bottom: 16px; }
+  .form-group label { display: block; font-size: 10px; font-weight: 600; color: rgba(255,255,255,0.45); margin-bottom: 7px; letter-spacing: 1.5px; text-transform: uppercase; }
+  .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px 14px; border: 1.5px solid rgba(255,255,255,0.12); border-radius: 10px; font-family: 'Inter', sans-serif; font-size: 13px; color: #fff; background: rgba(255,255,255,0.06); outline: none; transition: border-color 0.2s; }
+  .form-group select option { background: var(--green-dark); }
+  .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(255,255,255,0.25); }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--green-light); }
   .form-group textarea { resize: vertical; min-height: 90px; }
-  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-  .form-submit {
-    width: 100%; background: var(--accent); color: var(--navy);
-    border: none; padding: 14px; border-radius: 6px; font-size: 15px;
-    font-weight: 500; font-family: 'DM Sans', sans-serif; cursor: pointer;
-    transition: opacity 0.2s; margin-top: 6px;
-  }
-  .form-submit:hover { opacity: 0.88; }
-  .contact-cards { display: flex; flex-direction: column; gap: 18px; }
-  .contact-card {
-    background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
-    border-radius: 8px; padding: 20px 24px; display: flex; gap: 16px; align-items: flex-start;
-  }
-  .contact-icon { font-size: 22px; min-width: 28px; }
-  .contact-label { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: rgba(255,255,255,0.4); margin-bottom: 4px; }
-  .contact-val { font-size: 16px; font-weight: 500; color: #fff; }
-  .contact-sub { font-size: 13px; color: rgba(255,255,255,0.45); margin-top: 2px; }
-  .emergency-badge {
-    margin-top: 8px; display: inline-flex; align-items: center; gap: 6px;
-    background: rgba(244,164,35,0.15); border: 1px solid rgba(244,164,35,0.3);
-    color: var(--accent); font-size: 12px; font-weight: 500; padding: 5px 12px; border-radius: 20px;
-  }
-  .emergency-badge::before { content: '●'; font-size: 7px; animation: pulse 1.5s infinite; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .form-submit { width: 100%; background: var(--green-light); color: var(--green-dark); border: none; padding: 14px; border-radius: 50px; font-size: 13px; font-weight: 600; font-family: 'Inter', sans-serif; cursor: pointer; transition: all 0.2s; margin-top: 8px; }
+  .form-submit:hover { background: #fff; transform: translateY(-1px); }
+  .contact-title { font-family: 'Playfair Display', serif; font-size: 38px; font-weight: 800; color: var(--text); line-height: 1.1; margin-bottom: 14px; letter-spacing: -0.5px; }
+  .contact-title em { color: var(--green); font-style: italic; }
+  .contact-sub { font-size: 15px; color: var(--muted); line-height: 1.85; margin-bottom: 36px; font-weight: 300; }
+  .clist { display: flex; flex-direction: column; }
+  .citem { display: flex; gap: 16px; padding: 18px 0; border-bottom: 1px solid var(--border); align-items: flex-start; }
+  .citem:first-child { padding-top: 0; }
+  .citem:last-child { border: none; }
+  .cicon { font-size: 18px; min-width: 24px; margin-top: 2px; }
+  .clabel { font-size: 10px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+  .cval { font-size: 15px; font-weight: 600; color: var(--text); }
+  .cnote { font-size: 13px; color: var(--muted); margin-top: 2px; font-weight: 300; }
+  .open-pill { display: inline-flex; align-items: center; gap: 6px; margin-top: 6px; background: #f0fdf4; border: 1px solid #bbf7d0; color: #15803d; font-size: 11px; font-weight: 600; padding: 4px 12px; border-radius: 50px; }
+  .open-pill::before { content: '●'; font-size: 7px; animation: pulse 2s infinite; }
 
-  footer {
-    background: #060e1a; padding: 36px 5%;
-    display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;
-  }
-  .footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 20px; color: rgba(255,255,255,0.5); letter-spacing: 2px; }
-  .footer-logo span { color: var(--accent); }
-  .footer-copy { font-size: 13px; color: rgba(255,255,255,0.3); }
-  .footer-links { display: flex; gap: 24px; }
-  .footer-links a { font-size: 13px; color: rgba(255,255,255,0.4); text-decoration: none; }
-  .footer-links a:hover { color: rgba(255,255,255,0.7); }
+  /* FOOTER */
+  footer { background: var(--green-dark); padding: 44px 5% 32px; }
+  .footer-top { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 32px; padding-bottom: 36px; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 28px; }
+  .footer-brand { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: rgba(255,255,255,0.7); margin-bottom: 4px; }
+  .footer-brand-sub { font-size: 10px; color: rgba(255,255,255,0.3); letter-spacing: 2px; text-transform: uppercase; }
+  .footer-col { display: flex; flex-direction: column; gap: 10px; }
+  .footer-col-title { font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--lime); margin-bottom: 4px; }
+  .footer-col a { font-size: 13px; color: rgba(255,255,255,0.4); text-decoration: none; font-weight: 300; transition: color 0.2s; }
+  .footer-col a:hover { color: rgba(255,255,255,0.85); }
+  .footer-bottom { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; align-items: center; }
+  .footer-copy { font-size: 12px; color: rgba(255,255,255,0.2); }
+  .footer-tag { font-family: 'Playfair Display', serif; font-size: 13px; font-style: italic; color: var(--lime); opacity: 0.5; }
 
-  @media (max-width: 768px) {
+  @media (max-width: 860px) {
+    .hero-inner, .about-grid, .review-layout, .booking-grid { grid-template-columns: 1fr; }
+    .hero-card { display: none; }
     .nav-links { display: none; }
-    .about-grid, .booking-layout { grid-template-columns: 1fr; }
-    .hero-stats { gap: 20px; flex-wrap: wrap; }
-    .trust-bar { gap: 16px; }
     .form-row { grid-template-columns: 1fr; }
   }
 </style>
@@ -202,196 +193,240 @@
 <body>
 
 <nav>
-  <div class="nav-logo">Classic<span>HVAC</span></div>
+  <div class="nav-logo">
+    Emanuel Landscaping Service LLC
+    <span class="nav-logo-sub">Sarasota, FL · Open 24 Hours</span>
+  </div>
   <div class="nav-links">
-    <a href="#services">Services</a>
     <a href="#about">About</a>
+    <a href="#services">Services</a>
     <a href="#reviews">Reviews</a>
     <a href="#booking">Contact</a>
   </div>
-  <a href="tel:9413944255" class="nav-cta">📞 (941) 394-4255</a>
+  <a href="tel:9418794507" class="nav-cta">📞 (941) 879-4507</a>
 </nav>
 
 <section class="hero">
-  <div class="hero-content">
-    <div class="hero-badges">
-      <div class="hero-badge live">Open 24 Hours</div>
-      <div class="hero-badge badge-gold">⭐ 5.0 Rated</div>
-      <div class="hero-badge">🎖 Veteran-Owned</div>
-      <div class="hero-badge">🏳️‍🌈 LGBTQ+ Owned</div>
-    </div>
-    <h1>Comfort You<span>Can Count On.</span></h1>
-    <p class="hero-sub">Sarasota's trusted HVAC specialists — delivering advanced heating, cooling, and air quality solutions with an energy-smart approach. Available 24/7 for emergencies.</p>
-    <div class="hero-btns">
-      <a href="#booking" class="btn-primary">📋 Request Service</a>
-      <a href="tel:9413944255" class="btn-outline">📞 (941) 394-4255</a>
-    </div>
-    <div class="hero-stats">
-      <div>
-        <div class="stat-num">5.0<span>★</span></div>
-        <div class="stat-label">Google Rating</div>
+  <div class="hero-pattern"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-glow2"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow"><div class="hero-eyebrow-dot"></div> Sarasota's Reliable Landscaper</div>
+      <h1>Your Yard,<br><em>Transformed.</em><br>Any Time.</h1>
+      <p class="hero-sub">Emanuel Landscaping Service LLC — professional, dependable, and available around the clock. When your yard needs attention, we're there.</p>
+      <div class="hero-pills">
+        <div class="hero-pill">⭐ 5.0 Rated</div>
+        <div class="hero-pill">🕐 Open 24 Hours</div>
+        <div class="hero-pill">📍 Sarasota, FL</div>
       </div>
-      <div>
-        <div class="stat-num">24<span>/7</span></div>
-        <div class="stat-label">Emergency Service</div>
+      <div class="hero-btns">
+        <a href="#booking" class="btn-lime">🌿 Get a Free Quote</a>
+        <a href="tel:9418794507" class="btn-ghost">📞 (941) 879-4507</a>
       </div>
-      <div>
-        <div class="stat-num">100<span>%</span></div>
-        <div class="stat-label">Satisfaction Guaranteed</div>
+    </div>
+    <div class="hero-card">
+      <div class="hero-card-label">At a Glance</div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">5.0<sup>★</sup></div>
+        <div class="hero-stat-label">Google Rating</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">24<sup>/7</sup></div>
+        <div class="hero-stat-label">Always Available</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">1<sup>day</sup></div>
+        <div class="hero-stat-label">Storm Cleanup Speed</div>
       </div>
     </div>
   </div>
+  <div class="hero-wave">
+    <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg">
+      <path fill="#ffffff" d="M0,40L60,45C120,51,240,58,360,55C480,52,600,38,720,32C840,26,960,34,1080,42C1200,50,1320,56,1380,59L1440,61L1440,80L0,80Z"/>
+    </svg>
+  </div>
 </section>
 
-<div class="trust-bar">
-  <div class="trust-item">✓ FL Licensed & Insured</div>
-  <div class="trust-item">✓ Same-Day Service</div>
-  <div class="trust-item">✓ Free Estimates on Installs</div>
-  <div class="trust-item">✓ All Major Brands Serviced</div>
-  <div class="trust-item">✓ Veteran-Owned Business</div>
+<div class="ticker">
+  <div class="ticker-track">
+    <span class="ticker-item">Lawn Care <span class="tdot"></span></span>
+    <span class="ticker-item">Storm Cleanup <span class="tdot"></span></span>
+    <span class="ticker-item">Tree & Shrub Work <span class="tdot"></span></span>
+    <span class="ticker-item">Open 24 Hours <span class="tdot"></span></span>
+    <span class="ticker-item">5.0 Star Rated <span class="tdot"></span></span>
+    <span class="ticker-item">Sarasota Local <span class="tdot"></span></span>
+    <span class="ticker-item">Free Estimates <span class="tdot"></span></span>
+    <span class="ticker-item">Lawn Care <span class="tdot"></span></span>
+    <span class="ticker-item">Storm Cleanup <span class="tdot"></span></span>
+    <span class="ticker-item">Tree & Shrub Work <span class="tdot"></span></span>
+    <span class="ticker-item">Open 24 Hours <span class="tdot"></span></span>
+    <span class="ticker-item">5.0 Star Rated <span class="tdot"></span></span>
+    <span class="ticker-item">Sarasota Local <span class="tdot"></span></span>
+    <span class="ticker-item">Free Estimates <span class="tdot"></span></span>
+  </div>
 </div>
 
-<section class="services-section" id="services">
-  <div class="section-label">What We Do</div>
-  <div class="section-title">Our Services</div>
-  <p class="section-sub">From emergency repairs to full system installations, we handle everything your home or business needs to stay comfortable year-round.</p>
-  <div class="services-grid">
-    <div class="service-card">
-      <div class="service-icon">🔧</div>
-      <div class="service-name">AC Repair</div>
-      <div class="service-tag">Back to cool before the day is done.</div>
-      <div class="service-desc">Our certified techs diagnose and fix AC problems fast — from refrigerant leaks to faulty compressors. We get it right the first time.</div>
-      <div class="service-price">From $85 <span>· diagnostic fee applied toward repair</span></div>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">❄️</div>
-      <div class="service-name">AC Installation</div>
-      <div class="service-tag">New system, total comfort — done right.</div>
-      <div class="service-desc">Whether upgrading or replacing, we handle the full installation. We'll help you choose the right size and brand for your home and budget.</div>
-      <div class="service-price">From $3,500 <span>· depending on system size</span></div>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">🛠️</div>
-      <div class="service-name">Maintenance & Tune-Up</div>
-      <div class="service-tag">Keep it running before it stops.</div>
-      <div class="service-desc">Regular maintenance extends system life, improves efficiency, and catches small problems early. Includes full inspection, coil cleaning, and filter check.</div>
-      <div class="service-price">From $79 <span>· per visit</span></div>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">🌡️</div>
-      <div class="service-name">Heating Repair</div>
-      <div class="service-tag">When the cold hits, we've got you.</div>
-      <div class="service-desc">Florida winters may be mild but when your heat goes out we fix it fast. We service all makes and carry common parts on every truck.</div>
-      <div class="service-price">From $85 <span>· diagnostic fee applied toward repair</span></div>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">💨</div>
-      <div class="service-name">Air Duct Cleaning</div>
-      <div class="service-tag">Clean ducts, cleaner air, lower bills.</div>
-      <div class="service-desc">Deep air duct cleaning to improve airflow, boost efficiency, and keep your indoor air noticeably cleaner — done with a modern energy-smart approach.</div>
-      <div class="service-price">From $300 <span>· average home</span></div>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">🌿</div>
-      <div class="service-name">Air Quality & Purification</div>
-      <div class="service-tag">Breathe easier in every room.</div>
-      <div class="service-desc">UV air purifiers, whole-home filtration, and humidity control to eliminate allergens, mold spores, and bacteria — critical in Florida's humid climate.</div>
-      <div class="service-price">From $300 <span>· depending on system</span></div>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">📱</div>
-      <div class="service-name">Thermostat Installation</div>
-      <div class="service-tag">Smart control over your comfort.</div>
-      <div class="service-desc">Upgrade to a smart thermostat and control your home's temperature from anywhere. A well-programmed thermostat can cut your energy bill significantly.</div>
-      <div class="service-price">From $150 <span>· including thermostat</span></div>
-    </div>
-    <div class="service-card" style="border-color:#f4a423; background:#fffcf5;">
-      <div class="service-icon">🚨</div>
-      <div class="service-name">24-Hour Emergency Service</div>
-      <div class="service-tag">Day or night, we show up fast.</div>
-      <div class="service-desc">When unexpected breakdowns happen our emergency team steps in fast — no delays, no stress, just reliable service that gets your system running again.</div>
-      <div class="service-price">From $150 <span>· after-hours service call</span></div>
-    </div>
-  </div>
-</section>
-
-<section id="about">
+<section class="about-bg" id="about">
   <div class="about-grid">
     <div>
-      <div class="section-label">Who We Are</div>
-      <div class="section-title">Classic HVAC & Heating Experts</div>
-      <p class="section-sub">Based in Sarasota, we bring a modern, energy-smart approach to every job — focused on long-term system health, not quick fixes.</p>
+      <div class="stag">🌱 Who We Are</div>
+      <div class="stitle">Professional,<br><em>Reliable,</em> & Ready.</div>
+      <p class="ssub">Emanuel Landscaping Service LLC is a Sarasota-based landscaping company built on hard work, reliability, and showing up when it matters most — even when no one else will.</p>
       <div class="reasons">
         <div class="reason">
-          <div class="reason-num">01</div>
+          <div class="reason-icon">⚡</div>
           <div>
-            <div class="reason-title">Energy-smart approach</div>
-            <div class="reason-text">Every service is performed with efficiency in mind — reducing your energy costs while extending the life of your system.</div>
+            <div class="reason-title">Available 24 Hours</div>
+            <div class="reason-text">We don't keep regular hours because your yard doesn't either. We're available around the clock for whatever you need.</div>
           </div>
         </div>
         <div class="reason">
-          <div class="reason-num">02</div>
+          <div class="reason-icon">🌀</div>
           <div>
-            <div class="reason-title">Fast emergency response</div>
-            <div class="reason-text">We work quickly to repair heating or cooling issues and restore safe, comfortable conditions — no delays, no stress.</div>
+            <div class="reason-title">Storm & Emergency Cleanup</div>
+            <div class="reason-text">When Hurricane Ian hit Sarasota, Emanuel was out the next day cleaning up yards while everyone else was scrambling for weeks. That's who we are.</div>
           </div>
         </div>
         <div class="reason">
-          <div class="reason-num">03</div>
+          <div class="reason-icon">🤝</div>
           <div>
-            <div class="reason-title">Fair, reliable pricing</div>
-            <div class="reason-text">Our customers keep coming back because we're straight with them on price and quality. No upsells, no runaround.</div>
-          </div>
-        </div>
-        <div class="reason">
-          <div class="reason-num">04</div>
-          <div>
-            <div class="reason-title">Veteran & LGBTQ+ owned</div>
-            <div class="reason-text">We're proud to be a community business — built on the values of service, integrity, and respect for every customer.</div>
+            <div class="reason-title">A Pro You Can Count On</div>
+            <div class="reason-text">Our customers describe us as professional, reliable, and someone they'd recommend to anyone. We take that seriously on every job.</div>
           </div>
         </div>
       </div>
     </div>
-    <div class="about-box">
-      <div class="about-box-title">From the Owner</div>
-      <div class="about-quote">"Bring a new level of comfort to your home or business with our advanced HVAC care. From deep air duct cleaning to full heating and cooling system service, we focus on improving airflow, boosting efficiency, and keeping your indoor air noticeably cleaner. Everything is done with a modern, energy-smart approach that supports long-term system health."</div>
-      <div class="about-tags">
-        <span class="about-tag gold">🎖 Veteran-Owned</span>
-        <span class="about-tag gold">🏳️‍🌈 LGBTQ+ Owned</span>
-        <span class="about-tag">Sarasota, FL 34231</span>
-        <span class="about-tag">Open 24 Hours</span>
-        <span class="about-tag">4223 Murdock Ave</span>
+    <div class="about-visual">
+      <div class="about-visual-title">Why Choose Emanuel</div>
+      <div class="astat">
+        <div class="astat-num">5.0★</div>
+        <div class="astat-label">Perfect Google rating from verified customers</div>
+      </div>
+      <div class="astat">
+        <div class="astat-num">24/7</div>
+        <div class="astat-label">Available any time — day or night</div>
+      </div>
+      <div class="astat">
+        <div class="astat-num">1 day</div>
+        <div class="astat-label">Cleaned an entire yard post-hurricane in one day</div>
+      </div>
+      <div class="hurricane-badge">
+        <div class="hurricane-badge-title">🌀 Hurricane Ian Response</div>
+        <div class="hurricane-badge-text">While others scrambled for weeks, Emanuel showed up the day after the storm and cleaned up an entire yard and the neighbor's — in a single day.</div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="review-section" id="reviews">
-  <div class="section-label">What Customers Say</div>
-  <div class="section-title">Reviews</div>
-  <div class="review-overall">
-    <div class="review-score">5.0</div>
+<section class="services-bg" id="services">
+  <div class="stag">🌿 Services</div>
+  <div class="stitle">Everything Your <em>Yard</em> Needs.</div>
+  <p class="ssub">From routine lawn care to emergency storm cleanup — we handle it all with speed, professionalism, and a commitment to getting it done right.</p>
+  <div class="services-grid">
+    <div class="svc">
+      <div class="svc-icon">🌱</div>
+      <div class="svc-name">Lawn Care & Maintenance</div>
+      <div class="svc-desc">Regular mowing, edging, and lawn upkeep to keep your yard looking its best year-round. Reliable, consistent, and professionally done.</div>
+    </div>
+    <div class="svc">
+      <div class="svc-icon">🌀</div>
+      <div class="svc-name">Storm & Hurricane Cleanup</div>
+      <div class="svc-desc">Fast response when storms hit. We clear debris, fallen branches, and storm damage quickly so you can get back to normal. Available 24/7 for emergencies.</div>
+    </div>
+    <div class="svc">
+      <div class="svc-icon">🌳</div>
+      <div class="svc-name">Tree & Shrub Work</div>
+      <div class="svc-desc">Trimming, pruning, and removal of trees and shrubs. We keep your landscape healthy, safe, and looking great.</div>
+    </div>
+    <div class="svc">
+      <div class="svc-icon">🍃</div>
+      <div class="svc-name">Yard Cleanups</div>
+      <div class="svc-desc">Full yard cleanups for overgrown or neglected properties. We transform messy yards into clean, well-kept outdoor spaces fast.</div>
+    </div>
+    <div class="svc">
+      <div class="svc-icon">🏡</div>
+      <div class="svc-name">Residential & Commercial</div>
+      <div class="svc-desc">We work on homes, rental properties, and commercial spaces throughout Sarasota. No job is too big or too small.</div>
+    </div>
+    <div class="svc">
+      <div class="svc-icon">🕐</div>
+      <div class="svc-name">24-Hour Availability</div>
+      <div class="svc-desc">We're available around the clock — including nights, weekends, and after storms. When you need us, we're there.</div>
+    </div>
+  </div>
+</section>
+
+<section class="review-bg" id="reviews">
+  <div class="stag">⭐ Reviews</div>
+  <div class="stitle">What Our <em>Customers</em> Say.</div>
+  <p class="ssub">Our reputation is built one job at a time. Here's what Sarasota homeowners are saying about Emanuel.</p>
+  <div class="review-layout">
+    <div class="score-box">
+      <div class="score-num">5.0</div>
+      <div class="score-stars">★★★★★</div>
+      <div class="score-label">Google Verified</div>
+    </div>
+    <div class="review-card">
+      <div class="review-quote">"Emanuel showed up right after hurricane Ian and took care of my yard and my neighbors. He is a pro and he cleaned up our yard in a day while everybody else scrambled for weeks to get cleaned up. Thanks bud I would recommend you to anyone."</div>
+      <div class="review-author">
+        <div class="review-avatar">L</div>
+        <div>
+          <div class="review-name">LARGE LLC</div>
+          <div class="review-meta">Google Review · 2 years ago</div>
+          <div class="hurricane-tag">🌀 Hurricane Ian Response</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="booking-bg" id="booking">
+  <div class="booking-grid">
     <div>
-      <div class="review-score-stars">★★★★★</div>
-      <div class="review-score-label">Google Rating · Verified reviews</div>
+      <div class="stag">📞 Get in Touch</div>
+      <div class="contact-title">Get Your <em>Free</em> Quote Today.</div>
+      <div class="contact-sub">Call us anytime — we're available 24 hours. Or fill out the form and we'll get back to you quickly to discuss your project.</div>
+      <div class="clist">
+        <div class="citem">
+          <div class="cicon">📞</div>
+          <div>
+            <div class="clabel">Phone</div>
+            <div class="cval">(941) 879-4507</div>
+            <div class="cnote">Available anytime — we're open 24 hours</div>
+            <div class="open-pill">Open 24 Hours · 7 Days a Week</div>
+          </div>
+        </div>
+        <div class="citem">
+          <div class="cicon">📍</div>
+          <div>
+            <div class="clabel">Address</div>
+            <div class="cval">6915 Avenue A</div>
+            <div class="cnote">Sarasota, FL 34231</div>
+          </div>
+        </div>
+        <div class="citem">
+          <div class="cicon">⭐</div>
+          <div>
+            <div class="clabel">Google Rating</div>
+            <div class="cval">5.0 Stars — Google Verified</div>
+            <div class="cnote">"He is a pro — I would recommend you to anyone."</div>
+          </div>
+        </div>
+        <div class="citem">
+          <div class="cicon">🌀</div>
+          <div>
+            <div class="clabel">Emergency Service</div>
+            <div class="cval">Storm & Hurricane Cleanup</div>
+            <div class="cnote">Fast response when you need it most</div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="review-card">
-    <div class="review-stars">★★★★★</div>
-    <div class="review-text">"Very reliable service and fair pricing. I'd definitely call them again for any HVAC needs."</div>
-    <div class="review-author">Justine Tumagad</div>
-    <div class="review-date">2 weeks ago · Google Review</div>
-  </div>
-</section>
-
-<section class="booking-section" id="booking">
-  <div class="section-label">Get in Touch</div>
-  <div class="section-title">Request Service</div>
-  <p class="section-sub">Fill out the form and we'll call you back to confirm your appointment — or call us directly anytime, day or night.</p>
-  <div class="booking-layout">
-    <div class="form-card">
-      <div class="form-title">Book an Appointment</div>
-      <form action="https://formspree.io/f/xlgzjrdr" method="POST">
+    <div class="form-wrap">
+      <div class="form-title">Request a Free Quote</div>
+      <div class="form-sub">We'll get back to you as soon as possible.</div>
+      <form action="https://formspree.io/f/mzdoepjp" method="POST">
       <div class="form-row">
         <div class="form-group">
           <label>First Name</label>
@@ -407,21 +442,19 @@
         <input type="tel" name="phone" placeholder="(941) 555-0000">
       </div>
       <div class="form-group">
-        <label>Service Address</label>
+        <label>Property Address</label>
         <input type="text" name="address" placeholder="123 Main St, Sarasota FL">
       </div>
       <div class="form-group">
         <label>Service Needed</label>
         <select name="service">
           <option value="">Select a service...</option>
-          <option>AC Repair</option>
-          <option>AC Installation / Replacement</option>
-          <option>Maintenance & Tune-Up</option>
-          <option>Heating Repair</option>
-          <option>Air Duct Cleaning</option>
-          <option>Air Quality & Purification</option>
-          <option>Thermostat Installation</option>
-          <option>Emergency Service</option>
+          <option>Lawn Care & Maintenance</option>
+          <option>Storm / Hurricane Cleanup</option>
+          <option>Tree & Shrub Work</option>
+          <option>Yard Cleanup</option>
+          <option>Commercial Landscaping</option>
+          <option>Other</option>
         </select>
       </div>
       <div class="form-row">
@@ -434,62 +467,49 @@
           <select name="preferred_time">
             <option>Morning (8am–12pm)</option>
             <option>Afternoon (12pm–5pm)</option>
-            <option>Evening (5pm–8pm)</option>
+            <option>Evening (5pm+)</option>
+            <option>As Soon As Possible</option>
           </select>
         </div>
       </div>
       <div class="form-group">
-        <label>Describe the Issue (optional)</label>
-        <textarea name="message" placeholder="e.g. AC is blowing warm air, unit is making a loud noise..."></textarea>
+        <label>Tell Us About Your Project</label>
+        <textarea name="message" placeholder="Describe what you need done..."></textarea>
       </div>
-      <button class="form-submit">Submit Request →</button>
+      <button class="form-submit">🌿 Send My Request</button>
       </form>
-    </div>
-    <div class="contact-cards">
-      <div class="contact-card">
-        <div class="contact-icon">📞</div>
-        <div>
-          <div class="contact-label">Phone</div>
-          <div class="contact-val">(941) 394-4255</div>
-          <div class="contact-sub">Call anytime — we're always available</div>
-          <div class="emergency-badge">Open 24 hours · 7 days a week</div>
-        </div>
-      </div>
-      <div class="contact-card">
-        <div class="contact-icon">📍</div>
-        <div>
-          <div class="contact-label">Address</div>
-          <div class="contact-val">4223 Murdock Ave</div>
-          <div class="contact-sub">Sarasota, FL 34231</div>
-        </div>
-      </div>
-      <div class="contact-card">
-        <div class="contact-icon">🗺️</div>
-        <div>
-          <div class="contact-label">Service Area</div>
-          <div class="contact-val">Sarasota & Surrounding Areas</div>
-          <div class="contact-sub">Including Venice, North Port, Osprey, Nokomis & Englewood</div>
-        </div>
-      </div>
-      <div class="contact-card">
-        <div class="contact-icon">⭐</div>
-        <div>
-          <div class="contact-label">Google Rating</div>
-          <div class="contact-val">5.0 — 5 Stars</div>
-          <div class="contact-sub">"Very reliable service and fair pricing."</div>
-        </div>
-      </div>
     </div>
   </div>
 </section>
 
 <footer>
-  <div class="footer-logo">Classic<span>HVAC</span> & Heating Experts</div>
-  <div class="footer-copy">© 2026 Classic HVAC and Heating Experts · 4223 Murdock Ave, Sarasota, FL 34231</div>
-  <div class="footer-links">
-    <a href="#services">Services</a>
-    <a href="#about">About</a>
-    <a href="#booking">Contact</a>
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand">Emanuel Landscaping Service LLC</div>
+      <div class="footer-brand-sub">6915 Avenue A · Sarasota, FL 34231</div>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Services</div>
+      <a href="#services">Lawn Care</a>
+      <a href="#services">Storm Cleanup</a>
+      <a href="#services">Tree & Shrub Work</a>
+      <a href="#services">Yard Cleanups</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Company</div>
+      <a href="#about">About</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#booking">Contact</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Contact</div>
+      <a href="tel:9418794507">(941) 879-4507</a>
+      <a href="#booking">Free Quote</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 Emanuel Landscaping Service LLC · Sarasota, FL · All Rights Reserved</div>
+    <div class="footer-tag">Showing Up When It Matters Most.</div>
   </div>
 </footer>
 
